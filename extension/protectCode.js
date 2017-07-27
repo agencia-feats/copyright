@@ -132,13 +132,13 @@ var protectCode={
 	}
 };
 
-protectCode.block.dragImage		 =	true;
+protectCode.block.dragImage	 =	true;
 protectCode.block.selectText	 =	true;
-protectCode.block.CopyPaste		 =	true;
+protectCode.block.CopyPaste	 =	true;
 protectCode.block.PrintScreen	 =	true;
-protectCode.block.HotKeys		 =	true;
+protectCode.block.HotKeys	 =	true;
 protectCode.block.RightClick	 =	true;
-protectCode.block.focus			 =	true;
+protectCode.block.focus		 =	true;
 protectCode.mensages.CopyPaste	 =	"Todos os direitos reservados a Fulâno de tal";
 protectCode.mensages.HotKeys	 =	"Conteúdo protegido!";
 protectCode.mensages.PrintScreen =	"Ops, você quer copiar o que aqui?";
