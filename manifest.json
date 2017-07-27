@@ -1,0 +1,40 @@
+{
+    "manifest_version": 2,
+    "name": "Protect Content",
+    "version": "1.0",
+ 
+    "description": "Proteção contra cópias de conteúdo",
+ 
+    "icons": {
+       "48": "icon48.png",
+       "128": "icon128.png"
+    },
+ 
+    // Utilizaremos as "Page Actions" e registramos isso aqui
+    "page_action": {
+        "default_icon": {
+            "19" : "icon19.png"
+        },
+        "default_title": "Protect Content"
+    },
+ 
+    // Aqui declaramos as permissões que precisamos
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*",
+        "declarativeContent"
+    ],
+ 
+    // Utilizaremos uma "Event Page" (note o persistent: false)
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+ 
+    // Injetaremos esses arquivos quando "match" ocorrer
+    "content_scripts": [ {
+        "js": [ "protectCode.js" ],
+        "matches": [ "https://*/*" ]
+    } ]
+}
