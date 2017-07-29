@@ -127,8 +127,27 @@
 					};
 				};
 			};
+<<<<<<< HEAD
 			return true
 		}
 	};
 	console.log("ProtectCode is running!");
 	protectCode.fire();
+=======
+		};
+	}
+};
+
+protectCode.block.dragImage	 =	true;
+protectCode.block.selectText	 =	true;
+protectCode.block.CopyPaste	 =	true;
+protectCode.block.PrintScreen	 =	true;
+protectCode.block.HotKeys	 =	true;
+protectCode.block.RightClick	 =	true;
+protectCode.block.focus		 =	true;
+protectCode.mensages.CopyPaste	 =	"Todos os direitos reservados a Fulâno de tal";
+protectCode.mensages.HotKeys	 =	"Conteúdo protegido!";
+protectCode.mensages.PrintScreen =	"Ops, você quer copiar o que aqui?";
+protectCode.mensages.RightClick	 =	"Ops, você quer clicando com o botão direito?";
+protectCode.fire();
+>>>>>>> 40ddab3eb92c9ffa389cac7a48ca1bf91d940848
