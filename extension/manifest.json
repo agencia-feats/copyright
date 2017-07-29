@@ -9,7 +9,8 @@
        "48": "icon48.png",
        "128": "icon128.png"
     },
- 
+    // ACESSO AO ARQUIVO
+    // "web_accessible_resources": ["protectCode.js"],
     // Utilizaremos as "Page Actions" e registramos isso aqui
     "page_action": {
         "default_icon": {
@@ -17,15 +18,11 @@
         },
         "default_title": "Protect Content"
     },
- 
     // Aqui declaramos as permissões que precisamos
-    "permissions": [
-        "tabs",
-        "http://*/*",
-        "https://*/*",
-        "declarativeContent"
+    "permissions": [ 
+        "*://*/*",
+        "tabs"
     ],
- 
     // Utilizaremos uma "Event Page" (note o persistent: false)
     "background": {
         "scripts": ["background.js"],
@@ -35,6 +32,7 @@
     // Injetaremos esses arquivos quando "match" ocorrer
     "content_scripts": [ {
         "js": [ "protectCode.js" ],
-        "matches": [ "https://*/*" ]
+        "matches": [ "<all_urls>" ],
+        "run_at":"document_end"
     } ]
 }
