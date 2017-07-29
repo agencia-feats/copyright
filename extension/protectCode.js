@@ -16,8 +16,8 @@
 		},
 		AddClassNoSelect:function(element){
 			if(element==undefined){element="*";}
-			var css = element+'{-webkit-touch-callout:none!important;-webkit-user-select:none!important;-khtml-user-select:none!important;-moz-user-select:none!important; -ms-user-select:none!important; user-select:none!important;}',
-			    head = document.head || document.getElementsByTagName('head')[0],
+				var css = element+'{-webkit-touch-callout:none!important;-webkit-user-select:none!important;-khtml-user-select:none!important;-moz-user-select:none!important; -ms-user-select:none!important; user-select:none!important;} *:not(a){cursor: default;}';
+			   		head = document.head || document.getElementsByTagName('head')[0],
 			    style = document.createElement('style');
 				style.type = 'text/css';
 				if (style.styleSheet){
