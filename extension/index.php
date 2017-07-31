@@ -1,5 +1,6 @@
 <?
 	include('./functions.php');
 ?>
+
 <script src="./extension/protectCode.js"></script>
-<img src="/protect/<?=setTokenRest("./images/images.jpg")?>.protect">
+<img src="/protect/<?=img("./images/images.jpg")?>.protect">

@@ -37,7 +37,7 @@
 ###############################################################################################
 #  FUNÇÃO QUE CRIA E RETORNA TOKEN DE ACESSO
 ###############################################################################################
-	function setTokenRest($FileURL=null, $timeout = "5 seconds") {
+	function img($FileURL=null, $timeout = "5 seconds") {
 		global $mysqli;
 		$Formats = array("seconds", "minutes", "hours", "days", "months", "years");
 		if (is_string($timeout)) {

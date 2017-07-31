@@ -11,21 +11,22 @@
 ###############################################################################################
 #  PESQUISA REGISTROS COM O TOKEN DA URL E CRIADO EM MENOS DE 3 SEGUNDOS 
 ###############################################################################################
-	$consulta	=	mysqli_query($mysqli,'SELECT * FROM arquivos WHERE chave_de_acesso="'.$CODE_IMG.'" AND (now < expire )') or trigger_error(mysqli_error($mysqli));
+	$consulta	=	mysqli_query($mysqli,'SELECT * FROM arquivos WHERE chave_de_acesso="'.$CODE_IMG.'" AND (NOW() < expire )') or trigger_error(mysqli_error($mysqli));
 	$resutlado	=	mysqli_fetch_assoc($consulta);
 	$_num_rows 	=	mysqli_num_rows($consulta);
 
+
 ###############################################################################################
-#  PESQUISA REGISTROS COM O TOKEN DA URL E CRIADO EM MENOS DE 3 SEGUNDOS 
+#  PESQUISA REGISTROS COM O TOKEN DA URL OU EXPIRADOS 
 ###############################################################################################
 	if($_num_rows==1){
-		$consulta=mysqli_query($mysqli,'DELETE FROM arquivos WHERE chave_de_acesso="'.$CODE_IMG.'" OR (now > expire)') or trigger_error(mysqli_error($mysqli));
 		header('Content-type:image/jpg');
 		readfile($resutlado['link_arquivo']);
 	}else{
-		mysqli_query($mysqli,'DELETE FROM arquivos WHERE chave_de_acesso="'.$CODE_IMG.'" OR (now > expire)') or trigger_error(mysqli_error($mysqli));
 		echo "Invalid access";
-
 	}
-	exit;
-?>
+
+###############################################################################################
+#  PESQUISA REGISTROS COM O TOKEN DA URL OU EXPIRADOS 
+###############################################################################################
+	mysqli_query($mysqli,'DELETE FROM arquivos WHERE chave_de_acesso="'.$CODE_IMG.'" OR (NOW() > expire) ') or trigger_error(mysqli_error($mysqli));
