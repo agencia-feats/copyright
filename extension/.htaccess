@@ -1,7 +1,15 @@
 <IfModule mod_rewrite.c>
+	# Ativa o modo  RewriteRule
 	RewriteEngine On
+
+	
+	# Caso a URL não seja um arquivo existente
 	RewriteCond %{REQUEST_FILENAME} !-l
-	RewriteRule ^protect-img/(.*)$	protect-img/index.php [L]
-	RewriteRule ^(.*)$ index.php [L]
+
+	# E TENHA A EXTENSÃO ".protect", direciona para o arquivo responsável
+	RewriteRule ^.*\.(protect)$ protect-image.php 	[L]
+
+	# Caso contrario, manda pro index 
+	# RewriteRule ^(.*)$ ./index.php [L]
 </IfModule>
 

@@ -2,7 +2,7 @@
 ###############################################################################################
 #  CONECTA AO BANCO
 ###############################################################################################
-	$mysqli		=	mysqli_connect("localhost", "root", "", "protectimages");
+	$mysqli		=	mysqli_connect("mysql01-farm70.uni5.net", "unick", "q1w2e3r4t5", "unick");
 	mysqli_query($mysqli,'SET NAMES "utf8"'); 
 	mysqli_query($mysqli,'SET character_set_connection=utf8'); 
 	mysqli_query($mysqli,'SET character_set_client=utf8'); 
