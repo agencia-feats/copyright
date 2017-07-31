@@ -1,5 +1,4 @@
-# Script de proteção contra: 
-# PrintScreen - Copy/Paste - SelectText - DragImage  
+# Script de proteção contra: PrintScreen - Copy/Paste - SelectText - DragImage  
 
 Proteção básica contra cópias indevidas de seu conteúdo web.
 Foi projetado inicialmente para uma aplicação local utilizada no Chrome.
