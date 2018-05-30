@@ -10,6 +10,7 @@ Esse código foi projetado inicialmente para um cliente que trabalhava com fotog
 
 ### PrintScreen, Copy/Paste, SelectText, DragImage e RigthClick
 Caso queira implementar apenas o script em seu site, inclua ao final da página o arquivo:
+
 `<script src="./extension/protect-code.js"></script>`    
 
 ### imagem de única exibição a prova de cópia
