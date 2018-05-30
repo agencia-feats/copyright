@@ -8,7 +8,7 @@
 	#########################################################################
 	# SETAMOS O ARQUIVO BASE 												#
 	#########################################################################
-	RewriteRule ^$ index.php [L]
+	RewriteRule ^$ ./index.php [L]
 
 	#########################################################################
 	# CASO ESTEJA COM A EXTENSÃO .protect direciona para protect-image.php											#

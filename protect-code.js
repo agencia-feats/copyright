@@ -127,8 +127,12 @@
 					};
 				};
 			};
+
+			$.get('time.php', function(data) {
+				today = new Date(data);
+				closing = new Date(data);
+			});
 			return true
 		}
 	};
-	console.log("ProtectCode is running!");
 	protectCode.fire();

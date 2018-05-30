@@ -2,7 +2,7 @@
 ###############################################################################################
 #  CONECTA AO BANCO
 ###############################################################################################
-	$mysqli		=	mysqli_connect("mysql01-farm70.uni5.net", "unick", "q1w2e3r4t5", "unick");
+	$mysqli		=	mysqli_connect("db_server", "db_name", "db_pass", "db_user");
 	mysqli_query($mysqli,'SET NAMES "utf8"'); 
 	mysqli_query($mysqli,'SET character_set_connection=utf8'); 
 	mysqli_query($mysqli,'SET character_set_client=utf8'); 
@@ -37,7 +37,7 @@
 ###############################################################################################
 #  FUNÇÃO QUE CRIA E RETORNA TOKEN DE ACESSO
 ###############################################################################################
-	function img($FileURL=null, $timeout = "5 seconds") {
+	function img($FileURL=null, $timeout = "2 seconds") {
 		global $mysqli;
 		$Formats = array("seconds", "minutes", "hours", "days", "months", "years");
 		if (is_string($timeout)) {
@@ -64,7 +64,7 @@
 		$setTokenRest 	= _token();
 		$consulta		=	mysqli_query($mysqli,'INSERT INTO arquivos (chave_de_acesso,link_arquivo,now,expire) VALUES ("'.$setTokenRest.'","'.$FileURL.'","'.$now.'","'.$expire.'")') or trigger_error(mysqli_error($mysqli));
 		if ($consulta) {
-			return $setTokenRest;
+			return 'protect-image.php?'.$setTokenRest;
 		} else {
 			return null;
 		}
