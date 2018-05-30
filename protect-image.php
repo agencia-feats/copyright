@@ -21,15 +21,40 @@
 ###############################################################################################
 	$SERVER_INFO = explode('/', $_SERVER['HTTP_ACCEPT']);
 
-###############################################################################################
-#  PESQUISA REGISTROS COM O TOKEN DA URL OU EXPIRADOS 
-###############################################################################################
+
 	if($_num_rows==1 && $SERVER_INFO[0]=='image'){
-		header('Content-type:image/jpg');
-		readfile($resutlado['link_arquivo']);
+			###############################################################################################
+			#  AGORA VERIFICA A EXTENSÃO E RETORNA O ARQUIVO 
+			###############################################################################################
+           $imgpath = $resutlado['link_arquivo'];
+           $extencao = substr($imgpath,-3);
+			if( $extencao=="jpg" ||  $extencao=="jpeg"){
+				header('Content-Type: image/jpeg');
+				$img = imagecreatefromjpeg($imgpath);
+				imagejpeg($img);
+			}
+			if( $extencao=="png"){
+				header('Content-Type: image/png');
+				$img = imagecreatefrompng($imgpath);
+				$background = imagecolorallocate($img, 0, 0, 0);
+				imagecolortransparent($img, $background);
+				imagealphablending($img, false);
+				imagesavealpha($img, true);
+				imagepng($img);
+			}
+			if( $extencao=="gif"){
+				header('Content-Type: image/gif');
+				$img = imagecreatefromgif($imgpath);
+				$background = imagecolorallocate($img, 0, 0, 0);
+				imagecolortransparent($img, $background);
+				imagegif($img);
+			}
+
+		    imagedestroy($img);
 	}else{
 		echo "Invalid access";
 	}
+
 ###############################################################################################
 #  PESQUISA REGISTROS COM O TOKEN DA URL OU EXPIRADOS 
 ###############################################################################################
