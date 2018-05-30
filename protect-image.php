@@ -21,8 +21,12 @@
 ###############################################################################################
 	$SERVER_INFO = explode('/', $_SERVER['HTTP_ACCEPT']);
 
+// ob_start();
+// print_r($_SERVER);
+// $data = ob_get_contents();
+// file_put_contents("FILE.TXT", $data);
 
-	if($_num_rows==1 && $SERVER_INFO[0]=='image'){
+	if($_num_rows==1 && $SERVER_INFO[0]!='text/html'){
 			###############################################################################################
 			#  AGORA VERIFICA A EXTENSÃO E RETORNA O ARQUIVO 
 			###############################################################################################
@@ -58,4 +62,4 @@
 ###############################################################################################
 #  PESQUISA REGISTROS COM O TOKEN DA URL OU EXPIRADOS 
 ###############################################################################################
-	mysqli_query($mysqli,'DELETE FROM arquivos WHERE chave_de_acesso="'.$CODE_IMG[0].'" OR (NOW() > expire) ') or trigger_error(mysqli_error($mysqli));
+//	mysqli_query($mysqli,'DELETE FROM arquivos WHERE chave_de_acesso="'.$CODE_IMG[0].'" OR (NOW() > expire) ') or trigger_error(mysqli_error($mysqli));
