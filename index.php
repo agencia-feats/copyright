@@ -38,5 +38,13 @@
 
 <? include('./functions.php'); ?>
 <script src="./protect-code.js"></script>
+<h1>Férias na beira do lago</h1>
+<p>
+	<img src="<?=img("./images/images.jpg")?>" style="width: 500px; margin-right: 40px; float: left;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at turpis posuere, volutpat quam eget, bibendum quam. Fusce facilisis euismod orci eu vehicula. Fusce congue quam non lorem euismod vestibulum. Aliquam bibendum id est nec congue. Donec non metus augue. Vivamus a efficitur mi. Quisque imperdiet quam maximus ligula rutrum, vitae elementum tortor tempor. In viverra non mi a molestie. Suspendisse ullamcorper imperdiet libero non auctor. Maecenas lacus orci, mattis id urna in, hendrerit semper velit. Integer vehicula tempus arcu, et tempus diam tincidunt ut.
 
-<img src="<?=img("./images/images.jpg")?>">
+Etiam at elit elementum, consequat ligula quis, congue erat. Vivamus ultricies risus at neque viverra pretium. In in laoreet nisi. Etiam venenatis faucibus iaculis. Cras auctor, dui et dictum volutpat, nisl dui cursus tortor, sed efficitur magna tellus vitae erat. Suspendisse et aliquam odio. Donec vehicula diam nec ipsum pharetra, non eleifend libero sodales. Vestibulum at augue at diam posuere convallis et sit amet ex. Phasellus lobortis mauris eget urna gravida, in semper diam faucibus. Proin ultricies tortor vel ullamcorper vulputate. Maecenas ultricies risus in erat placerat interdum.
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed diam erat, varius vel metus eget, accumsan efficitur libero. Mauris quis egestas magna, ut ornare sem. Vivamus mattis augue vitae dui lacinia fermentum. Nullam mollis at urna ac mattis. Vivamus congue risus diam, eu fringilla magna scelerisque quis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis eleifend leo in porta consectetur. Vivamus fringilla suscipit lectus, vitae dignissim odio. Nullam molestie eget urna in ultrices. Mauris vitae justo ut metus ullamcorper imperdiet ac eu nisi. Morbi aliquam velit ut orci dictum, nec pellentesque tellus commodo. Sed nec lorem at ipsum rhoncus feugiat. Integer eget sapien pellentesque, interdum quam vitae, interdum lacus. Suspendisse vestibulum tempor orci quis tincidunt.
+
+
+</p>
