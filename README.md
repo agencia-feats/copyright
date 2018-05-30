@@ -2,7 +2,7 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/websheep/copyright.svg)](https://github.com/websheep/copyright/issues) [![GitHub forks](https://img.shields.io/github/forks/websheep/copyright.svg)](https://github.com/websheep/copyright/network) [![GitHub stars](https://img.shields.io/github/stars/websheep/copyright.svg)](https://github.com/websheep/copyright/stargazers) [![GitHub license](https://img.shields.io/github/license/websheep/copyright.svg)](https://github.com/websheep/copyright)
 
-## SCRIPT DE PROTEÇÃO CONTRA CÓPIAS
+# SCRIPT DE PROTEÇÃO CONTRA CÓPIAS
 
 Sabemos que é impossível ser 100% seguros, porém devemos dificultar ao máximo a apropriação indevida de nossa propriedade intelectual.	
 Esse código foi projetado inicialmente para um cliente que trabalhava com fotografias e não queria que suas fotos fossem "roubadas".
@@ -12,7 +12,7 @@ Esse código foi projetado inicialmente para um cliente que trabalhava com fotog
 Caso queira implementar apenas o script em seu site, inclua ao final da página o arquivo:
 `<script src="./extension/protect-code.js"></script>`    
 
-### IMAGEM DE ÚNICA EXIBIÇÃO E A PROVA DE CÓPIA
+### imagem de única exibição a prova de cópia
 Lembrando, que todos os códigos se complementam, por exemplo:  
 `<img src="<?=img("./images/images.jpg")?>">`
 
