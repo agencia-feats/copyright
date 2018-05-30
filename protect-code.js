@@ -121,17 +121,11 @@
 						(e.ctrlKey && e.keyCode === 88) 										|| 	//Ctl + X
 						(e.ctrlKey && e.keyCode === 18) 
 					){
-						console.log("HotKeys disabled")
 						protectCode.clearCopy();
 					    return false;
 					};
 				};
 			};
-
-			$.get('time.php', function(data) {
-				today = new Date(data);
-				closing = new Date(data);
-			});
 			return true
 		}
 	};
