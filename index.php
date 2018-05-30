@@ -37,6 +37,6 @@
 
 
 <? include('./functions.php'); ?>
-<script src="./extension/protect-code.js"></script>
+<script src="./protect-code.js"></script>
 
 <img src="<?=img("./images/images.jpg")?>">

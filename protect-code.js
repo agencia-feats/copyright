@@ -78,13 +78,13 @@
 			if(protectCode.block.RightClick==true){
 				if (document.addEventListener) {
 					    document.addEventListener('contextmenu', function(e) {
-					        alert(protectCode.mensages.RightClick);
+					        if(protectCode.mensages.RightClick!=""){alert(protectCode.mensages.RightClick);}
 					        e.preventDefault();
 					    }, false);
 
 				} else {
 					    document.attachEvent('oncontextmenu', function() {
-					        alert(protectCode.mensages.RightClick);
+					       if(protectCode.mensages.RightClick!=""){ alert(protectCode.mensages.RightClick);}
 					        window.event.returnValue = false;
 					    });
 				}
@@ -100,7 +100,7 @@
 			if(protectCode.block.PrintScreen == true){
 				window.addEventListener("keyup", function(e) {
 				  if (e.keyCode == 44) {
-					alert(protectCode.mensages.PrintScreen)
+					if(protectCode.mensages.PrintScreen!=""){alert(protectCode.mensages.PrintScreen);}
 					protectCode.clearCopy();
 					return false;
 				  }
