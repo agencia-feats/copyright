@@ -6,7 +6,8 @@
 			PrintScreen	:true,
 			HotKeys		:true,
 			RightClick	:true,
-			focus		:true
+			focus		:true,
+			debugger	:true,
 		},
 		mensages:{
 			CopyPaste	:"Todos os direitos reservados a Fulâno de tal",
@@ -91,8 +92,8 @@
 			}
 			if(protectCode.block.CopyPaste==true){
 				document.addEventListener('copy', function(e) {
-					e.clipboardData.setData('text/plain', protectCode.mensages.CopyPaste);
-					e.clipboardData.setData('text/html',  protectCode.mensages.CopyPaste);
+					try {e.clipboardData.setData('text/plain', protectCode.mensages.CopyPaste);} catch (err) {}
+					try {e.clipboardData.setData('text/html',  protectCode.mensages.CopyPaste);} catch (err) {}
 					e.preventDefault();
 				});		
 			}
@@ -100,28 +101,42 @@
 			if(protectCode.block.PrintScreen == true){
 				window.addEventListener("keyup", function(e) {
 				  if (e.keyCode == 44) {
-					if(protectCode.mensages.PrintScreen!=""){alert(protectCode.mensages.PrintScreen);}
+					if(protectCode.mensages.PrintScreen!=""){alert(protectCode.mensages.PrintScreen);}			
 					protectCode.clearCopy();
+					  try { e.clipboardData.setData('text/plain', protectCode.mensages.PrintScreen); } catch (err) { }
+					  try { e.clipboardData.setData('text/html', protectCode.mensages.PrintScreen); } catch (err) { }
+					
 					return false;
 				  }
 				});
 			}
 			if(protectCode.block.HotKeys==true){
 				document.onkeydown = function(e) {
+					var ctrl = (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey);
 					if(
-						(e.keyCode === 123) 													|| 	// F12
-						(e.ctrlKey && e.shiftKey && e.keyCode === 46) 							|| 	// Ctrl+Shift+del
-						(e.ctrlKey && e.altKey && e.keyCode === 46) 							|| 	// Ctrl+Alt+del
-						(e.ctrlKey && e.keyCode === 82) 										|| 	// Ctrl + R
-						(e.ctrlKey && e.keyCode === 9) 											|| 	// alt TAB
-						(e.ctrlKey && e.keyCode === 85) 										|| 	// Ctrl + U
-						(e.ctrlKey && e.keyCode === 74) 										|| 	
-						(e.ctrlKey && e.keyCode === 67) 										||	//ctrl+C
-						(e.ctrlKey && e.keyCode === 86) 										|| 	//Ctl + V
-						(e.ctrlKey && e.keyCode === 88) 										|| 	//Ctl + X
-						(e.ctrlKey && e.keyCode === 18) 
+						(e.keyCode === 123) 												|| 	// F12
+						(e.keyCode === 116) 												|| 	// F5
+						(e.keyCode === 116	&& 	ctrl 				) 						|| 	// Ctrl+F5
+						(e.keyCode === 73	&& 	ctrl && e.shiftKey	) 						|| 	// Ctrl+Shift+I
+						(e.keyCode === 46	&& 	ctrl && e.shiftKey	) 						|| 	// Ctrl+Shift+del
+						(e.keyCode === 46	&& 	ctrl && e.altKey	)						|| 	// Ctrl+Alt+del
+						(e.keyCode === 74	&& 	ctrl && e.shiftKey	) 						|| 	// Ctrl+Shift+J
+						(e.keyCode === 74	&& 	ctrl				)						|| 	// Ctrl + J
+						(e.keyCode === 82	&& 	ctrl				)						|| 	// Ctrl + R
+						(e.keyCode === 9	&& 	ctrl				)						|| 	// alt TAB
+						(e.keyCode === 85	&& 	ctrl				)						|| 	// Ctrl + U
+						(e.keyCode === 67	&& 	ctrl				)						||	// ctrl+C
+						(e.keyCode === 86	&& 	ctrl				)						|| 	// Ctl + V
+						(e.keyCode === 88	&& 	ctrl				)						|| 	// Ctl + X
+						(e.keyCode === 18	&& 	ctrl				)							 
 					){
 						protectCode.clearCopy();
+						if (e.stopPropagation) {
+							e.stopPropagation();
+						} else if (window.event) {
+							window.event.cancelBubble = true;
+						}
+						e.preventDefault();
 					    return false;
 					};
 				};
