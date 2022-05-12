@@ -1,8 +1,8 @@
 	var protectCode={
 		block:{
 			dragImage	:true,
-			selectText	:true,
-			CopyPaste	:true,
+			selectText	:false,
+			CopyPaste	:false,
 			PrintScreen	:true,
 			HotKeys		:true,
 			RightClick	:true,
@@ -10,10 +10,10 @@
 			debugger	:true,
 		},
 		mensages:{
-			CopyPaste	:"Todos os direitos reservados a Fulâno de tal",
-			HotKeys 	:"Conteúdo protegido!",
-			PrintScreen :"Ops, você quer copiar o que aqui?",
-			RightClick 	:"Ops, você quer clicando com o botão direito?",
+			CopyPaste	:"",
+			HotKeys 	:"",
+			PrintScreen :"",
+			RightClick 	:"",
 		},
 		AddClassNoSelect:function(element){
 			if(element==undefined){element="*";}
@@ -125,9 +125,9 @@
 						(e.keyCode === 82	&& 	ctrl				)						|| 	// Ctrl + R
 						(e.keyCode === 9	&& 	ctrl				)						|| 	// alt TAB
 						(e.keyCode === 85	&& 	ctrl				)						|| 	// Ctrl + U
-						(e.keyCode === 67	&& 	ctrl				)						||	// ctrl+C
-						(e.keyCode === 86	&& 	ctrl				)						|| 	// Ctl + V
-						(e.keyCode === 88	&& 	ctrl				)						|| 	// Ctl + X
+						(e.keyCode === 67	&& 	ctrl && protectCode.block.CopyPaste==true )	||	// ctrl+C
+						(e.keyCode === 86	&& 	ctrl && protectCode.block.CopyPaste==true )	|| 	// Ctl + V
+						(e.keyCode === 88	&& 	ctrl && protectCode.block.CopyPaste==true )	|| 	// Ctl + X
 						(e.keyCode === 18	&& 	ctrl				)							 
 					){
 						protectCode.clearCopy();
